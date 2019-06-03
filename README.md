@@ -1,6 +1,9 @@
 # Webdesign Voorbeelden
 Enkele voorbeelden gezien in de cursus
 
+NOTE:
+Ik heb hierin niets geschreven over Git of Bootstrap, omdat dat te specifiek is
+
 Inhoudstabel  
 - [Les 2, Favicon](#les-2-favicon)
 - [Les 3, Fonts](#les-3-fonts)
@@ -447,6 +450,7 @@ isset() /* --> Returned true indien variabele bestaat, bv: */ isset($_POST["emai
 \n /* newline voor in de html code */
 $_GET /* --> array opvragen van variabelen gestuurd via GET */
 $_GET["var"] /* --> variabele var uit GET halen */
+```
 
 Validation.php:
 ```php
