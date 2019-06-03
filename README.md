@@ -8,6 +8,7 @@ Inhoudstabel
 - [Les 5, Update mediaqueries](#les-5-update-mediaqueries)
 - [Les 6, Responsieve afbeeldingen](#les-6-responsieve-afbeeldingen)
 - [Les 8, Formulieren en formulierafhandeling](#les-8-formulieren-en-formulierafhandeling)
+- [Les 12, Sass](#les-12-sass)
 
 
 ___
@@ -460,3 +461,104 @@ Validation.php:
 </div>
 ```
 En een link over HTTPS, ik betwijfel dat we hier iets specifiek uit moeten kennen https://imu.nl/seo/van-http-naar-https-stappenplan/
+
+___
+
+## Les 12, Sass
+
+### Installatie
+```
+(Installeer Node JS)
+npm install -g node-sass
+
+(Indien gulp bestand aanwezig is)
+npm install -g gulp-cli
+gulp
+
+(Indien gulp niet aanwezig is)
+cd parentfolder/van/scss/folder/met/style.scss/in/
+npm install browser-sync -g
+node-sass scss -o css (De output van de scss komt in de folder css te staan, als gezegd in -o css)
+browser-sync start --server "public_html" --files "public_html"
+
+```
+
+### Variabelen
+```sass
+$hoofdkleur:#f04c25;
+$lettertype:verdana, sans-serif;
+body {
+  color:$hoofdkleur;
+  font-family:$lettertype;
+}
+div {
+  background-color:$hoofdkleur;
+  font-family:$lettertype;
+}
+```
+
+### Functies
+```sass
+$hoofdkleur:#f04c25;
+$lettertype:verdana, sans-serif;
+body {
+  color:$hoofdkleur;
+  font-family:$lettertype;
+}
+div {
+  background-color:lighten(invert($hoofdkleur),50%);
+  font-family:$lettertype;
+}
+```
+Meer functies: https://sass-lang.com/documentation/functions
+
+### Nesten (nesting)
+```sass
+.klasse {
+  color: red;
+  
+  div {
+    /* Dit past toe op divs BINNENIN een element met .klasse */
+  }
+  
+  /* & selecteert de parent! */
+  &.yeet {
+    /* Dit past toe op elementen met classes klasse EN yeet */
+    background-color: blue;
+  }
+}
+
+```
+
+### Partials & importeren
+\_variables.scss
+```scss
+$lettertype:verdana, sans-serif;
+div {
+  background-color: red;
+}
+```
+style.scss
+```scss
+@import "variables";
+body {
+  font-family: $lettertype;
+}
+```
+
+### Mixins & includen
+```sass
+@mixin kleurencombinatie($achter,$voor) {
+  background-color: $achter;
+  color: $voor;
+}
+a {
+  &:link {
+    @include kleurencombinatie(#000,#fff);
+  }
+  &:visited {
+    @include kleurencombinatie(darkblue,rgb(0,0,100));
+  }
+}
+```
+
