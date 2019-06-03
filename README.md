@@ -4,6 +4,7 @@ Enkele voorbeelden gezien in de cursus
 Inhoudstabel  
 - [Les 2, Favicon](#les-2-favicon)
 - [Les 3, Fonts](#les-3-fonts)
+- [Les 4, .htaccess](#les-4-htaccess)
 
 ___
 
@@ -80,6 +81,15 @@ Goed om te onthouden: bestandstype - format
 - .woff - format('woff')
 - .ttf - format('truetype')
 
+___
 
+## Les 4, htaccess
+Voorbeeld goede .htaccess
+```
+Options All -Indexes
+
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+```
 
 
