@@ -7,6 +7,8 @@ Inhoudstabel
 - [Les 4, .htaccess en errorpages](#les-4-htaccess-en-errorpages)
 - [Les 5, Update mediaqueries](#les-5-update-mediaqueries)
 - [Les 6, Responsieve afbeeldingen](#les-6-responsieve-afbeeldingen)
+- [Les 8, Formulieren en formulierafhandeling](#les-8-formulieren-en-formulierafhandeling)
+
 
 ___
 
@@ -212,3 +214,62 @@ Meerdere versies van afbeelding (jpg/png/gif) voor verschillende pixeldensiteite
 Vanaf viewpoortbreedte van 765px, wordt de afbeeldingsbreedte beperkt tot 765px
 (Wanneer je via de console in mobile view gaat, kan je het uittesten met de DPR setting bovenaan)
 
+___
+
+## Les 8, Formulieren en formulierafhandeling
+
+Toegankelijke formulieren gebruiken labels:
+```html
+<p>
+  <label for="naam">Naam<sup>*</sup></label>
+  <input type="text" id="naam" name="gebruikersnaam" placeholder="Typ hier je naam">
+  <!-- Label for en input id zijn gerelateerd -->
+  <!-- ID's moeten uniek zijn, moet beginnen met een letter, alleen uit kleine letters bestaan, en geen blanco's bevatten -->
+  <!-- Name wordt gebruikt in PHP, geef het alleen aan inputs (niet aan form of iets anders) -->
+</p>
+<p>
+  <label for="wachtwoord">Wachtwoord</label>
+  <input type="password" id="wachtwoord" size="15" maxlength="20" name="passwoord" value="demo">
+</p>
+<p>
+  <input type="hidden" name="veiligheidscode" value="123">
+  <!-- Geeft info door dat niet door de gebruiker moet worden ingegeven -->
+  <!-- Wordt IIRC soms ook gebruikt om bots te checken die alles automatisch invullen -->
+</p>
+<p>
+  <label for="url">URL</label>
+  <input type="url" id="url" name="url" placeholder="url?">
+  <!-- Geldige waardes zijn scheme://deRest (bv https://example.com) of een relatieve url -->
+</p>
+<p>
+  <!-- Text met regex (regular expression / reguliere expressie) pattern -->
+  <label for="postcode">Postcode</label>
+  <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}">
+  <!-- Vaak voorkomende regex: http://html5pattern.com/ -->
+</p>
+<p>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+  <!-- Required attribuut zorgt ervoor dat het ingevuld moet zijn vooraleer te drukken -->
+</p>
+<p>
+  <label for="range">Range</label>
+  <input type="range" id="range" name="range" min="0" max="100" step="5" value="40">
+</p>
+<p>
+  <label for="number">Nummer</label>
+  <input type="number" id="number" name="number" value="40">
+</p>
+<p>
+  <label for="stepnumber">Nummer met step</label>
+  <input type="number" id="stepnumber" name="stepnumber" min="0" max="100" step="5" value="40">
+</p>
+<p>
+  <label for="date">Datum</label>
+  <input type="date" id="date" name="date">
+</p>
+<p>
+  <label for="week">Week</label>
+  <input type="week" id="week" name="week">
+</p>
+```
