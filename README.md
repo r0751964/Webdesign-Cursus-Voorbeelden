@@ -125,7 +125,7 @@ Vergeet niet de viewport toe te voegen! De emmet-afkorting meta:vp werkt normaal
 
 ___
 
-# Les 6, Responsieve afbeeldingen
+## Les 6, Responsieve afbeeldingen
 
 Allemaal soorten afbeeldingen, fun voor de hele familie:
 ```html
@@ -220,56 +220,243 @@ ___
 
 Toegankelijke formulieren gebruiken labels:
 ```html
-<p>
-  <label for="naam">Naam<sup>*</sup></label>
-  <input type="text" id="naam" name="gebruikersnaam" placeholder="Typ hier je naam">
-  <!-- Label for en input id zijn gerelateerd -->
-  <!-- ID's moeten uniek zijn, moet beginnen met een letter, alleen uit kleine letters bestaan, en geen blanco's bevatten -->
-  <!-- Name wordt gebruikt in PHP, geef het alleen aan inputs (niet aan form of iets anders) -->
-</p>
-<p>
-  <label for="wachtwoord">Wachtwoord</label>
-  <input type="password" id="wachtwoord" size="15" maxlength="20" name="passwoord" value="demo">
-</p>
-<p>
-  <input type="hidden" name="veiligheidscode" value="123">
-  <!-- Geeft info door dat niet door de gebruiker moet worden ingegeven -->
-  <!-- Wordt IIRC soms ook gebruikt om bots te checken die alles automatisch invullen -->
-</p>
-<p>
-  <label for="url">URL</label>
-  <input type="url" id="url" name="url" placeholder="url?">
-  <!-- Geldige waardes zijn scheme://deRest (bv https://example.com) of een relatieve url -->
-</p>
-<p>
-  <!-- Text met regex (regular expression / reguliere expressie) pattern -->
-  <label for="postcode">Postcode</label>
-  <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}">
-  <!-- Vaak voorkomende regex: http://html5pattern.com/ -->
-</p>
-<p>
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
-  <!-- Required attribuut zorgt ervoor dat het ingevuld moet zijn vooraleer te drukken -->
-</p>
-<p>
-  <label for="range">Range</label>
-  <input type="range" id="range" name="range" min="0" max="100" step="5" value="40">
-</p>
-<p>
-  <label for="number">Nummer</label>
-  <input type="number" id="number" name="number" value="40">
-</p>
-<p>
-  <label for="stepnumber">Nummer met step</label>
-  <input type="number" id="stepnumber" name="stepnumber" min="0" max="100" step="5" value="40">
-</p>
-<p>
-  <label for="date">Datum</label>
-  <input type="date" id="date" name="date">
-</p>
-<p>
-  <label for="week">Week</label>
-  <input type="week" id="week" name="week">
-</p>
+  <form action="voorbeeld.php" methode="get">
+  <p>
+    <label for="naam">Naam<sup>*</sup></label>
+    <input type="text" id="naam" name="gebruikersnaam" placeholder="Typ hier je naam">
+    <!-- Label for en input id zijn gerelateerd -->
+    <!-- ID's moeten uniek zijn, moet beginnen met een letter, alleen uit kleine letters bestaan, en geen blanco's bevatten -->
+    <!-- Name wordt gebruikt in PHP, geef het alleen aan inputs (niet aan form of iets anders) -->
+  </p>
+  <p>
+    <label for="wachtwoord">Wachtwoord</label>
+    <input type="password" id="wachtwoord" size="15" maxlength="20" name="passwoord" value="demo">
+  </p>
+  <p>
+    <input type="hidden" name="veiligheidscode" value="123">
+    <!-- Geeft info door dat niet door de gebruiker moet worden ingegeven -->
+    <!-- Wordt IIRC soms ook gebruikt om bots te checken die alles automatisch invullen -->
+  </p>
+  <p>
+    <label for="url">URL</label>
+    <input type="url" id="url" name="url" placeholder="url?">
+    <!-- Geldige waardes zijn scheme://deRest (bv https://example.com) of een relatieve url -->
+  </p>
+  <p>
+    <!-- Text met regex (regular expression / reguliere expressie) pattern -->
+    <label for="postcode">Postcode</label>
+    <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}">
+    <!-- Vaak voorkomende regex: http://html5pattern.com/ -->
+  </p>
+  <p>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <!-- Required attribuut zorgt ervoor dat het ingevuld moet zijn vooraleer te drukken -->
+  </p>
+  <p>
+    <label for="range">Range</label>
+    <input type="range" id="range" name="range" min="0" max="100" step="5" value="40">
+  </p>
+  <p>
+    <label for="number">Nummer</label>
+    <input type="number" id="number" name="number" value="40">
+  </p>
+  <p>
+    <label for="stepnumber">Nummer met step</label>
+    <input type="number" id="stepnumber" name="stepnumber" min="0" max="100" step="5" value="40">
+  </p>
+  <p>
+    <label for="date">Datum</label>
+    <input type="date" id="date" name="date">
+  </p>
+  <p>
+    <label for="week">Week</label>
+    <input type="week" id="week" name="week">
+  </p>
+  <p>
+    <label for="month">Maand</label>
+    <input type="month" id="month" name="month">
+  </p>
+  <p>
+    <label for="time">Tijd</label>
+    <input type="time" id="time" name="time">
+  </p>
+  <p>
+    <label for="datetimelocal">Local Datetime</label>
+    <input type="datetime-local" id="datetimelocal" name="datetimelocal">
+    <!-- Werkt niet mogelijk niet op alle browsers -->
+  </p>
+  <p>
+    <label for="color">Kleur</label>
+    <input type="color" id="color" name="color">
+  </p>
+  <p>
+    <label for="query">Zoeken</label>
+    <input type="query" id="id" name="query">
+    <!-- Dit heeft eigenlijk (nog) geen extra functionaliteit -->
+  </p>
+  <p>
+    <label for="tel">Telefoonnummer</label>
+    <input type="tel" id="tel" name="tel"
+           pattern="0(\d{2,3}\/\d{6}|\d\/\d{7})">
+    <!-- Dit heeft (zoals bij search) geen extra functionaliteit uit zichzelf -->
+    <!-- Met een pattern is het wel nuttig (\d = [0-9]) -->
+  </p>
+  <p>
+    <input type="checkbox" id="wagen" name="vervoer1" value="auto">
+    <label for="wagen">Ik heb een eigen wagen</label>
+  </p>
+  <p>
+    <input type="checkbox" id="fiets" name="vervoer2" value="fiets" checked>
+    <label for="fiets">Ik heb een eigen wagen</label>
+    <!-- Checked auto-checked de checkbox -->
+  </p>
+  <p>
+    <input type="radio" id="rijbewijs" name="autorijden" value="ja">
+    <label for="fiets">Ik heb een rijbewijs B</label>
+    <!-- Radiobuttons die bij elkaar horen moeten dezelfde name hebben! -->
+  </p>
+  <p>
+    <input type="radio" id="rijbewijs" name="autorijden" value="neen" checked>
+    <label for="fiets">Ik heb geen rijbewijs B</label>
+    <!-- Checked kan terug gebruikt worden voor iets automatisch aan te vinken -->
+  </p>
+  <p>
+    <label for="opmerking">Graag hier uw opmerking:</label>
+  </p>
+  <p>
+    <textarea  rows="5" cols="25" id="opmerking" name="feedback"></textarea>
+  </p>
+  <p>
+    <label for="combobox">Hier is een combobox select</label>
+  </p>
+  <p>
+    <select id="combobox" name="combobox">
+      <option value="G">Als de size vd select niet gedefined is</option>
+      <option value="T">Of gelijk is aan 1</option>
+      <option value="H" selected>Krijg je een combobox!</option>
+      <!-- Als de size vd select niet gedefined is, of gelijk is aan 1, krijg je een combobox! -->
+      <!-- selected bij een select auto-selecteerd die option -->
+    </select>
+  </p>
+  <p>
+    <label for="eenkeuzeselect">Hier is een 1-keuze select</label>
+  </p>
+  <p>
+    <select id="eenkeuzeselect" name="eenkeuzeselect">
+      <option value="G">Als de size vd select groter is als 1</option>
+      <option value="T" selected>Krijg je een 1 keuze select!</option>
+      <option value="H">(Of hoe het ook noemt)</option>
+      <!-- Als de size vd select groter is dan 1, krijg je een 1 keuze select! (Of hoe het ook noemt) -->
+    </select>
+  </p>
+  <p>
+    <label for="meerkeuzeselect">Hier is een meerkeuze select</label>
+  </p>
+  <p>
+    <select id="meerkeuzeselect" name="meerkeuzeselect[ ]" multiple>
+      <option value="G">Als het attribuut multiple wordt gegeven</option>
+      <option value="M">En de name eindigt met [ ]</option>
+      <option value="T" selected>Krijg je een meerkeuze select!</option>
+      <option value="H">(Of hoe het ook noemt)</option>
+      <!-- Als het attribuut multiple wordt gegeven en de naam eindigt met [ ] krijg je een meerkeuze select! (Of hoe het ook noemt)-->
+      <!-- Blijkbaar pas voor 2ITF, maar staat in de cursus dus ??? -->
+    </select>
+  </p>
+  <p>
+    <label for="eenkeuzeselectOpt">Hier is een 1-keuze select met optgroup</label>
+  </p>
+  <p>
+    <select id="eenkeuzeselectOpt" name="eenkeuzeselectOpt">
+      <optgroup label="Fun voor">
+        <option value="G">Als de size vd select groter is als 1</option>
+        <option value="T" selected>Krijg je een 1 keuze select!</option>
+      </optgroup>
+      <optgroup label="De hele familie">
+        <option value="H">(Of hoe het ook noemt)</option>
+      </optgroup>
+    </select>
+  </p>
+  <p>
+    <label for="meerkeuzeselectOpt">Hier is een meerkeuze select</label>
+  </p>
+  <p>
+    <select id="meerkeuzeselectOpt" name="meerkeuzeselectOpt[ ]" multiple>
+      <optgroup label="Coole info">
+        <option value="G">Als het attribuut multiple wordt gegeven</option>
+        <option value="M">En de name eindigt met [ ]</option>
+      </optgroup>
+      <option value="T" selected>Krijg je een meerkeuze select!</option>
+      <option value="H">(Of hoe het ook noemt)</option>
+    </select>
+  </p>
+  <fieldset>
+    <legend>Met legend geef je de fieldset een titel</legend>
+    Met fieldset groepeer je enkele inputs in een kader!
+  </fieldset>
+  <p>
+    <input type="submit" value="versturen!">
+    <!-- Een gewone knop kan ook, maar dan moet je Javascript gebruiken en dat is teveel moeite -->
+  </p>
+  <p>
+    <input type="reset" value="beginwaarden">
+  </p>
+</form>
 ```
+Emmet:
+- form:get
+- form:post
+- input
+- input:p
+- input:c
+- input:r
+- input:s
+- input:reset
+- ...
+
+Form styling:
+```css
+input:focus {
+  outline: none;
+  border: 2px solid #f00;
+  box-shadow: none;
+}
+input[type=date], input[type=number] {
+  width: auto; /* Reset width */
+}
+input:invalid {
+  background: #f8bdb2 url(invalid.png) no-repeat center right;
+}
+input:valid {
+  background: #a8e0e5  url(valid.png) no-repeat center right;
+}
+```
+Cursors aanpassen: http://www.echoecho.com/csscursors.htm
+
+
+### PHP
+
+```php
+$_POST /* --> array opvragen van variabelen gestuurd via POST */
+$_POST["var"] /* --> variabele var uit POST halen */
+. /* strings aan elkaar plakken, bv: */ "<h1>Hallo, ".$_POST["voornaam"]." ".$_["achternaam"]."</h1>"
+echo /* --> Zet string op scherm, meestal gebruikt voor HTML code te genereren */
+isset() /* --> Returned true indien variabele bestaat, bv: */ isset($_POST["email"])
+\n /* newline voor in de html code */
+$_GET /* --> array opvragen van variabelen gestuurd via GET */
+$_GET["var"] /* --> variabele var uit GET halen */
+
+Validation.php:
+```php
+<div>
+  <?php if (isset($_POST["voornaam"]) && $_POST["voornaam"] != "" && isset($_POST["achternaam"]) && $_POST["achternaam"] != "") echo "<h1>Hallo, ".$_POST["voornaam"]." ".$_POST["achternaam"]."</h1>\n"; else echo "<h1>Hallo, John Doe</h1>\n"; ?>
+  <h3 class="mb-5">
+  <em><?php if (isset($_POST["email"]) && $_POST["email"] != "") echo "Je email adres is ".$_POST["email"]."\n"; else echo "Je hebt geen email adres doorgegeven\n"; ?></em>
+  </h3>
+  <blockquote class="blockquote">
+    <p class="mb-0"><?php if (isset($_POST["checkbox"]) && $_POST["checkbox"] == "ja") echo "Je wilt emails ontvangen op het doorgegeven email adres.\n"; else echo "Je wilt geen emails ontvangen.\n"; ?></p>
+    <?php if (isset($_POST["bericht"]) && $_POST["bericht"] != "") echo "<h4>Bericht</h4><p class='blockquote-footer'>".$_POST["bericht"]."</p>\n"; else echo "<h2>Geen bericht</h2>\n"; ?>
+  </blockquote>
+</div>
+```
+En een link over HTTPS, ik betwijfel dat we hier iets specifiek uit moeten kennen https://imu.nl/seo/van-http-naar-https-stappenplan/
