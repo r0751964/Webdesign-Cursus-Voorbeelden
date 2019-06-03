@@ -1,10 +1,14 @@
 # Webdesign Voorbeelden
 Enkele voorbeelden gezien in de cursus
 
+Inhoudstabel  
+- [Les 2, Favicon](#les-2-favicon)
+- [Les 3, Fonts](#les-3-fonts)
+
 ___
 
 ## Les 2, Favicon
-We gebruikten http://www.favicon.cc in 1e semester voor icoon te tekenen
+We gebruikten http://www.favicon.cc in 1e semester voor icoon te tekenen  
 Maar nu gooien we png's in https://realfavicongenerator.net als coole guys
 
 ### Favicon in root:
