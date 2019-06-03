@@ -9,6 +9,7 @@ Inhoudstabel
 - [Les 6, Responsieve afbeeldingen](#les-6-responsieve-afbeeldingen)
 - [Les 8, Formulieren en formulierafhandeling](#les-8-formulieren-en-formulierafhandeling)
 - [Les 12, Sass](#les-12-sass)
+- [Les 13, CSS3](#les-13-css3)
 
 
 ___
@@ -561,4 +562,313 @@ a {
   }
 }
 ```
+
+___
+
+## Les 13, CSS3
+
+### Prefixes
+```css
+h2:last-child {
+  -webkit-text-emphasis: "*" #f04c25;
+  text-emphasis: "*" #f04c25;
+}
+```
+
+### Media queries
+```css
+#achtergrond {
+  background-image: url(foto_1x.jpg);
+}
+
+/* 1dppx 1:1, 2dppx 2:2, 3dppx 3:3
+@media (min-resolution: 2dppx) {
+  #achtergrond {
+    background-image: url(foto_2x.jpg);
+  }
+}
+```
+
+### Selectors
+```css
+/* ^: Begint met */
+a[href^="mailto"] {}
+a[href^="ftp"] {}
+a[href^="https"] {}
+
+/* $: Eindigt met */
+a[href$=".pdf"] {}
+a[href$=".doc"] {}
+a[href$=".ppt"] {}
+
+/* *: Bevat */
+a[href*="image"] {}
+
+/* Combinatie: pdf via http met naam in titel */
+a[href^="http://"][href*="naam"][href$=".pdf"]{}
+
+.selectClass
+#selectId
+* (Alle elementen)
+div (alle divs)
+div, p (alle divs en ps)
+div > p (alle ps die directe children zijn van div)
+div + p (alle ps die de volgende sibling van een div zijn (er recht achter komen))
+div ~ p (alle ps die de vorige sibling van een div zijn (er recht voor komen))
+
+[attribute] (Element met attribute)
+[attribute="yeet"] (Element met attribute waarvan waarde gelijk is aan yeet)
+[attribute~="yeet"] (Element met attribute waarvan de waarde het WOORD yeet bevat)
+[attribute^="yeet"] (Element met attribute waarvan de waarde begint met yeet)
+[attribute$="yeet"] (Element met attribute waarvan de waarde eindigt met yeet)
+[attribute*="value"] (Element met attribute waarvan de waarde yeet bevat (waar dan ook))
+```
+
+### Psuedo-klassen & psuedo-elementen
+
+<details><summary>Datamine</summary>
+  AUTEURSNOTE: We kunnen allemaal Engels, en ik heb tot nu tot en met de css selectors ALLES handmatig geschreven. Ben het beu. ALS je een datamine spoiler ziet staan onder een titel, dan is dat gedeelte gewoon gedatamined van de cursus. In de datamine spoiler staat ook de code die ik heb geschreven om de cursus te dataminen. High effort diefstal?
+  
+  ```js
+  function DatamineCursus(selector){
+    var database = document.querySelectorAll(".lijst li")
+    markdown = "```css\n"
+    for (var i=0; i < database.length; i++) {
+      var data = database[i].textContent
+      splitIndex = data.indexOf(" ")
+      var arg1 = data.substring(splitIndex, 0).trim().replace(/\s\s+/g, " ")
+      var arg2 = data.substring(splitIndex).trim().replace(/\s\s+/g, " ")
+      markdown += arg1 + "\t(" + arg2 + ")\n\n"
+    }
+    markdown += "```"
+    console.log(markdown)
+  }
+  ```
+                                    
+</details>
+
+```css
+/* Psuedo-klassen */
+a:link	(Selects all unvisited links)
+
+a:visited	(Selects all visited links)
+
+a:focus	(Selects the focused link)
+
+a:hover	(Selects links on mouse hover)
+
+a:active	(Selects the active link element)
+
+input:checked	(Selects every checked <input> element)
+
+input:disabled	(Selects every disabled <input> element)
+
+p:empty	(Selects every <p> element with no children)
+
+input:enabled	(Selects every enabled <input> element)
+
+p:first-child	(Selects every <p> element that is the first child of its parent)
+
+p:first-of-type	(Selects every <p> element that is the first <p> element of its parent)
+
+input:focus	(Selects the <input> element which has focus)
+
+input:in-range	(Selects <input> elements with a value within a specified range)
+
+input:invalid	(Selects all <input> elements with an invalid value)
+
+p:lang(language)	(Selects all <p> elements with a lang attribute equal to ‘language’)
+
+p:last-child	(Selects every <p> element which is the last child of its parent)
+
+p:last-of-type	(Selects every <p> element which is the last <p> element of its parent)
+
+:not(p)	(Selects every element that is not a <p>)
+
+p:nth-child(2)	(Selects every <p> element that is the second child of its parent)
+
+p:nth-child(odd)	(Selects every <p> element that is an odd child of its parent)
+
+p:nth-child(even)	(Selects every <p> element that is an even child of its parent)
+
+p:nth-last-child(2)	(Selects every <p> element that is the second child of its parent, counting from the last child)
+
+p:nth-last-of-type(2)	(Selects every <p> element that is the second <p> element of its parent, counting from the last child)
+
+p:nth-of-type(2)	(Selects every <p> element that is the second <p> element of its parent)
+
+p:only-of-type	(Selects every <p> element that is the only <p> element of its parent)
+
+p:only-child	(Selects every <p> element that is the only child of its parent)
+
+input:optional	(Selects <input> elements with no ‘required’ attribute)
+
+input:out-of-range	(Selects <input> elements with a value outside a specified range)
+
+input:read-only	(Selects <input> elements with the ‘readonly’ attribute specified)
+
+input:read-write	(Selects <input> elements with the ‘readonly’ attribute not specified)
+
+input:required	(Selects <input> elements with the ‘required’ attribute specified)
+
+:root	(Selects the documents root element)
+
+#id:target	(Selects the current active #id element)
+
+input:valid	(Selects all <input> elements with a valid value)
+
+/* Psuedo-elementen */
+
+p::after	(Insert content after <p> element)
+
+p::before	(Insert content before <p> element)
+
+p::first-letter	(Selects the first letter of every <p> element)
+
+p::first-line	(Selects the first line of every <p> element)
+
+::selection	(Selects the portion of an element that is selected by a user)
+
+```
+
+
+### Text effects
+
+```sass
+span {
+  font-size: 5em;
+  font-family: $lettertypealternatief;
+  text-shadow:
+    0 -2px 1px $oranje,
+    0 -4px 3px lighten(invert($oranje),20%),
+    0 -6px 6px lighten($donker,30%),
+    0 -9px 12px $donker;
+}
+```
+Je kan experimenteren met text effecten op:
+http://css3generator.com/
+https://css3gen.com/wp-content/cache/all/text-shadow/index.html
+
+### Multiple columns (kolommen)
+```sass
+#col1 {
+  columns: 100px 3;
+}
+
+#col2 {
+  column-count: 4;
+  column-width: 100px;
+  column-gap: $afstand*5;
+  column-rule: $afstand/2 dotted $oranje;
+}
+```
+
+### Background-images
+De space en round properties kunnen gebruikt worden om bij herhaling niet af te snijden, ik denk in background-repeat
+Meerdere background images combineren (meerdere achtergronden combineren):
+```sass
+  background-image: url(man.png), url(man.png), url(landschap.png);
+  background-repeat: no-repeat;
+  background-position: 20% 70%, 40% 60%, 0% 0%;
+```
+
+### Border & box
+
+border-radius: 50%; voor een mooie cirkel uit te komen, voor fun voor de hele familie
+
+Border-image: https://border-image.com/
+Shapes: https://css-tricks.com/the-shapes-of-css/
+Borders: https://code.tutsplus.com/tutorials/css-refreshers-borders--net-24655
+
+### Color & opacity
+
+currentColor hergebruikt de vorige kleur
+```css
+h2 {
+  padding: 2rem;
+  color: rebeccapurple;
+  background-color: inherit;
+  border: 5px solid currentColor;
+  box-shadow: 0 0 5px currentColor;
+}
+```
+
+Color picker: http://www.workwithcolor.com/hsl-color-picker-01.htm
+
+
+### Gradients
+
+Gradient generator: https://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28left\%2C\%20rgba\%28248\%2C80\%2C50\%2C1\%29\%200\%25\%2C\%20rgba\%28241\%2C111\%2C92\%2C1\%29\%2050\%25\%2C\%20rgba\%28246\%2C41\%2C12\%2C1\%29\%2051\%25\%2C\%20rgba\%28240\%2C47\%2C23\%2C1\%29\%2071\%25\%2C\%20rgba\%28231\%2C56\%2C39\%2C1\%29\%20100\%25\%29\%3B'
+
+### 2D transforms
+
+```css
+div {
+  transform: translate(20px,-20px) rotate(-290deg) scale(1.3,0.6) skew(45deg);
+  transform-origin: 0% 20%;  /* Rotate niet vanaf 50% 50%, maar vanaf 20% onder de linkerbovenhoek */
+}
+```
+Generator: https://www.css3maker.com/css3-transform.html
+
+### 3D transforms
+
+```css
+div {
+  transform: perspective(200px) rotateY(-50deg);
+}
+```
+
+### transitions & animations
+Transitions laten properties vloeiend veranderen, ipv dat ze in een milliseconde vooruitschieten
+```sass
+div {
+  height: 50px;
+  width: 50px;
+  transition: height 500ms, width: 1s ease-in 500ms;
+  
+  /* Transition kan je ook languit schrijven: */
+  transition: height;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+  transition-delay: 500ms;
+  
+  &:hover {
+    height: 200px;
+    width: 200px;
+  }
+}
+```
+
+Animations laten je toe om complexere transitions te maken:
+```css
+@keyframes verkleuren_en_verplaatsen {
+  /* 0%{} mag als from{} geschreven worden */
+  0% {
+    border-radius: 50%;
+    background-color: red;
+  }
+  
+  20% {
+    background-color: yellow;
+  }
+ 
+  /* 100%{} mag als to{} geschreven worden */
+  100% {
+    background-color: blue;
+    border-radius: 0%;
+    transform: translateX(360px);
+  }
+  
+  div {
+    animation_name: verkleuren_en_verplaatsen;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-delay: 2s;
+  }
+}
+```
+
 
