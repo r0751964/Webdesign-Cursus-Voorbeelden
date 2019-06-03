@@ -4,7 +4,7 @@ Enkele voorbeelden gezien in de cursus
 Inhoudstabel  
 - [Les 2, Favicon](#les-2-favicon)
 - [Les 3, Fonts](#les-3-fonts)
-- [Les 4, .htaccess](#les-4-htaccess)
+- [Les 4, .htaccess en errorpages](#les-4-htaccess-en-errorpages)
 - [Les 5, Update mediaqueries](#les-5-update-mediaqueries)
 - [Les 6, Responsieve afbeeldingen](#les-6-responsieve-afbeeldingen)
 
@@ -85,7 +85,7 @@ Goed om te onthouden: bestandstype - format
 
 ___
 
-## Les 4, htaccess
+## Les 4, .htaccess en errorpages
 Voorbeeld goede .htaccess
 ```
 Options All -Indexes
