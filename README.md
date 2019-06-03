@@ -1,12 +1,14 @@
 # Webdesign Voorbeelden
 Enkele voorbeelden, zoals gezien in de cursus en eventueel aangepast/gemaakt door yours truly
 
-[Link naar Theorie Website](https://r0751964.github.io/Webdesign-Theorie/)
+[Link naar Theorie Website](https://r0751964.github.io/Webdesign-Theorie/)  
 [Link naar Theorie pure tekst, als je dat liever hebt](https://github.com/r0751964/Webdesign-Theorie/blob/master/README.md)
-[Link naar Voorbeelden Website](https://r0751964.github.io/Webdesign-Cursus-Voorbeelden/)
+
+[Link naar Voorbeelden Website](https://r0751964.github.io/Webdesign-Cursus-Voorbeelden/)  
 [Link naar Voorbeelden pure tekst, als je dat liever hebt](https://github.com/r0751964/Webdesign-Cursus-Voorbeelden/blob/master/README.md)
-[Link naar Handige Links Website](https://r0751964.github.io/Webdesign-Handige-Links/)
-[Link naar Handige Links pure tekst, als je dat liever hebt](https://github.com/r0751964/Webdesign-Handige-Links/blob/master/README.md)
+
+[Link naar Handige Links Website](https://r0751964.github.io/Webdesign-Handige-Links/)  
+[Link naar Handige Links pure tekst, als je dat liever hebt](https://github.com/r0751964/Webdesign-Handige-Links/blob/master/README.md)  
 
 NOTE:
 Ik heb hierin niets geschreven over Git of Bootstrap, omdat dat te specifiek is
