@@ -5,6 +5,7 @@ Inhoudstabel
 - [Les 2, Favicon](#les-2-favicon)
 - [Les 3, Fonts](#les-3-fonts)
 - [Les 4, .htaccess](#les-4-htaccess)
+- [Les 5, Update mediaqueries](#les-5-update-mediaqueries)
 
 ___
 
@@ -92,4 +93,30 @@ ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 ```
 
+___
+
+## Les 5, Update mediaqueries
+
+### Belangrijk
+Vergeet niet de viewport toe te voegen! De emmet-afkorting meta:vp werkt normaal, maar indien niet:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+### Media queries met meerdere CSS bestanden
+```html
+<link ref="stylesheet" href="klein.css" media="screen and (min-width:500px)">
+<link ref="stylesheet" href="groot.css" media="screen and (min-width:1100px)">
+```
+
+### Media queries in CSS
+```css
+@media screen and (min-width: 500px) {
+  p {color: yellow;}
+}
+
+@media screen and (min-width: 1100px) {
+  p {color: red;}
+}
+```
 
